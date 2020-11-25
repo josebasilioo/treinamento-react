@@ -3,5 +3,6 @@
 - What i did 2;
 
 ## How to test
-- What do i have to do to test it? (1)
-- What do i have to do to test it? (2)
+1. First step i have to do
+2. Second...
+3. Final
