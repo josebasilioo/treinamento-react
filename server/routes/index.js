@@ -4,6 +4,7 @@ const cors = require('cors');
 
 const Post = keystone.list('Posts');
 
+const apiBanner = require('../controllers/banner');
 const quemSomos = require("../controllers/QuemSomos")
 const missaoValoresVisao = require("../controllers/MissaoValoresVisao")
 
@@ -14,7 +15,7 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 
-
+  app.get('/api/banner', apiBanner.getBanner);
   app.get("/api/quemSomos", quemSomos.getWhoWeAre)
   app.get("/api/missaoValoresVisao", missaoValoresVisao.getmissaoValoresVisao)
 
