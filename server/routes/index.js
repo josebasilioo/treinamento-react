@@ -5,6 +5,7 @@ const cors = require('cors');
 const Post = keystone.list('Posts');
 
 const quemSomos = require("../controllers/QuemSomos")
+const missaoValoresVisao = require("../controllers/MissaoValoresVisao")
 
 module.exports = (app) => {
   app.use(cors());
@@ -15,6 +16,7 @@ module.exports = (app) => {
 
 
   app.get("/api/quemSomos", quemSomos.getWhoWeAre)
+  app.get("/api/missaoValoresVisao", missaoValoresVisao.getmissaoValoresVisao)
 
   
   app.get('/api/posts', (req, res) => {
