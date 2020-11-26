@@ -5,7 +5,8 @@ const { Types } = keystone.Field
 const redesSociais = new keystone.List("redesSociais", {
     map: { name: "key" },
     unique: true,
-    nodelete: true
+    nodelete: true,
+    nocreate: true
 })
 
 redesSociais.add({
@@ -35,7 +36,7 @@ redesSociais.add({
         initial: true,
         index: true
     },
-    instagram: {
+    localizacao: {
         type: Types.Text,
         required: true,
         unique: true,
