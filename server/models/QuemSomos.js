@@ -12,7 +12,7 @@ const quemSomos = new keystone.List("quemSomos", {
 quemSomos.add({
     key: {
         type: Types.Text,
-        value: "Testando",
+        value: "Quem somos",
         noedit: true
     },
     texto: {
