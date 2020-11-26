@@ -4,6 +4,8 @@ const cors = require('cors');
 
 const Post = keystone.list('Posts');
 
+const quemSomos = require("../controllers/QuemSomos")
+
 module.exports = (app) => {
   app.use(cors());
 
@@ -11,6 +13,10 @@ module.exports = (app) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 
+
+  app.get("/api/quemSomos", quemSomos.getWhoWeAre)
+
+  
   app.get('/api/posts', (req, res) => {
     Post.model.find((err, data) => {
       if (err) {
