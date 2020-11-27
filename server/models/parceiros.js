@@ -11,7 +11,6 @@ parceiros.add({
     key: {
         type: Types.Text,
         value: "Parceiros",
-        noedit: true
     },
     image: {
         type: Types.CloudinaryImage,
