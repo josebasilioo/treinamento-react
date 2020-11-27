@@ -28,3 +28,5 @@ parceiros.add({
         index: true
     }
 })
+
+parceiros.register();
