@@ -8,6 +8,7 @@ const apiBanner = require('../controllers/banner');
 const quemSomos = require("../controllers/QuemSomos")
 const missaoValoresVisao = require("../controllers/MissaoValoresVisao")
 const redesSociais = require("../controllers/RedesSociais")
+const apiParceiros = require('../controllers/parceiros');
 
 module.exports = (app) => {
   app.use(cors());
@@ -20,6 +21,7 @@ module.exports = (app) => {
   app.get("/api/quemSomos", quemSomos.getWhoWeAre)
   app.get("/api/missaoValoresVisao", missaoValoresVisao.getmissaoValoresVisao)
   app.get("/api/redesSociais", redesSociais.getSocialMedias)
+  app.get('/api/parceiros', apiParceiros.getParceiros);
 
   
   app.get('/api/posts', (req, res) => {
