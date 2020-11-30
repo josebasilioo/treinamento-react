@@ -5,9 +5,10 @@ const cors = require('cors');
 const Post = keystone.list('Posts');
 
 const apiBanner = require('../controllers/banner');
-const quemSomos = require("../controllers/QuemSomos")
-const missaoValoresVisao = require("../controllers/MissaoValoresVisao")
-const redesSociais = require("../controllers/RedesSociais")
+const quemSomos = require("../controllers/QuemSomos");
+const apiProposito = require("../controllers/proposito");
+const redesSociais = require("../controllers/RedesSociais");
+const apiRobos = require("../controllers/robos")
 
 module.exports = (app) => {
   app.use(cors());
@@ -17,9 +18,10 @@ module.exports = (app) => {
   });
 
   app.get('/api/banner', apiBanner.getBanner);
-  app.get("/api/quemSomos", quemSomos.getWhoWeAre)
-  app.get("/api/missaoValoresVisao", missaoValoresVisao.getmissaoValoresVisao)
-  app.get("/api/redesSociais", redesSociais.getSocialMedias)
+  app.get("/api/quemSomos", quemSomos.getWhoWeAre);
+  app.get("/api/proposito", apiProposito.getProposito);
+  app.get("/api/redesSociais", redesSociais.getSocialMedias);
+  app.get('/api/robos', apiRobos.getRobo)
 
   
   app.get('/api/posts', (req, res) => {

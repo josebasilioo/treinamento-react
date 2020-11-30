@@ -2,18 +2,18 @@ const keystone = require("keystone")
 
 const { Types } = keystone.Field
 
-const missaoValoresVisao = new keystone.List("missaoValoresVisao", {
+const proposito = new keystone.List("proposito", {
     map: { name: "key" },
     unique: true,
+    nocreate: true,
     nodelete: true,
-    nocreate: true
 })
 
-missaoValoresVisao.add({
+proposito.add({
 
     key: {
         type: Types.Text,
-        value: "Missão, valores e visão",
+        value: "Propósito",
         noedit: true
     },
     missao: {
@@ -41,4 +41,4 @@ missaoValoresVisao.add({
 
 })
 
-missaoValoresVisao.register()
+proposito.register()
