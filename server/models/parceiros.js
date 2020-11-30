@@ -3,14 +3,33 @@ const keystone = require('keystone');
 const { Types } = keystone.Field;
 
 const parceiros = new keystone.List("parceiros", {
-    map: { name: "key" },
+    map: { name: "nome" },
     unique: true
 });
 
 parceiros.add({
-    key: {
+    nome: {
         type: Types.Text,
         value: "Parceiros",
+        required: true,
+        unique: true,
+        initial: true,
+        index: true
+    },
+    descricao: {
+        type: Types.Textarea,
+        required: true,
+        unique: true,
+        initial: true,
+        index: true,
+        max: 250
+    },
+    link: {
+        type: Types.Url,
+        required: true,
+        unique: true,
+        initial: true,
+        index: true
     },
     image: {
         type: Types.CloudinaryImage,
@@ -19,13 +38,7 @@ parceiros.add({
         initial: true,
         index: true
     },
-    link: {
-        type: Types.Url,
-        required: true,
-        unique: true,
-        initial: true,
-        index: true
-    }
+    
 })
 
 parceiros.register();
