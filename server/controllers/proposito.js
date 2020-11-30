@@ -1,11 +1,11 @@
 const keystone = require("keystone")
-const missaoValoresVisao = keystone.list("missaoValoresVisao").model
+const proposito = keystone.list("proposito").model
 
 const handlers = {
 
-    getmissaoValoresVisao: function (req, res) {
+    getProposito: function (req, res) {
 
-        missaoValoresVisao.find().exec(function (err, data) {
+        proposito.find().exec(function (err, data) {
             if (err) {
                 res.status(500).send("DB Error")
             } else {
